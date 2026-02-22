@@ -1,5 +1,3 @@
-package Strings;
-
 public class StringsIntroduction {
         public static void main(String[] args){
             //Constructors of String Class
@@ -40,6 +38,26 @@ public class StringsIntroduction {
             System.out.println(a.concat(b)) ;
             System.out.println(b.concat(a)) ;
 
+            //4- trim() - removes beginning and ending white spaces from the string
+            String whiteSpaceHeavy= " hello this is java core course    " ;
+            System.out.println(whiteSpaceHeavy.trim() + ".") ;
+            //equalsTo() checking if a string is equal or not
+            String l= "Wassup!" ;
+            String m= "What's up!" ;
+            boolean checkEqual = l.equals(m) ;  //checking with other string object
+            System.out.println("First Check-> " + checkEqual) ;
+            boolean checkEqualAgain= l.equals("Wassup") ;   //checking with other string
+            System.out.println("Second Check-> "+ checkEqualAgain) ;
+
+
+            //Changing cases of String
+            //toLowerCase()
+            String lowerCaseString = "Hey! How are You? This String will turn into LowerCase" ;
+            System.out.println("String in lowercase-> " + lowerCaseString.toLowerCase()) ;
             
+            //toUpperCase()
+            String upperCaseString = "Hey! This String is in UpperCase" ;
+            System.out.println("String in uppercase-> " + upperCaseString.toUpperCase()) ;
+
         }
 }
