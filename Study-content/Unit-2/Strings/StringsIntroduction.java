@@ -41,6 +41,7 @@ public class StringsIntroduction {
             //4- trim() - removes beginning and ending white spaces from the string
             String whiteSpaceHeavy= " hello this is java core course    " ;
             System.out.println(whiteSpaceHeavy.trim() + ".") ;
+            
             //equalsTo() checking if a string is equal or not
             String l= "Wassup!" ;
             String m= "What's up!" ;
