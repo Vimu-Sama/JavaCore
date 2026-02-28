@@ -9,5 +9,6 @@ public class whatever{
             electricity= sc.nextBoolean() ;
             System.out.println("Fan spinnning!") ;
         }while(electricity) ;
+        sc.close() ;
     }
 }
