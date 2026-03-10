@@ -49,7 +49,7 @@ public class Vehicle{
     //default constructor
     public Vehicle(){
         this.speed= 0;
-        this.companyName = "TATA" ;
+        this.companyName = "Mahindra" ;
         this.modelName = "Scorpio" ;
         this.vehicleColor= Color.RED ;
     }
@@ -60,5 +60,9 @@ public class Vehicle{
         this.companyName = companyName ;
         this.modelName = modelName ;
         this.vehicleColor = vehicleColor ;
+    }
+
+    public void Display(){
+        System.out.println(speed + companyName + modelName + vehicleColor) ;
     }
 }
