@@ -7,7 +7,7 @@ INTERFACE RULES IN JAVA
 
 2. Interfaces CANNOT be instantiated (no objects can be created).
 
-   Animal a = new Animal();  // ❌ compile-time error
+   Animal a = new Animal();  // compile-time error
 
 3. A class implements an interface using the 'implements' keyword.
 
@@ -89,12 +89,68 @@ INTERFACE RULES IN JAVA
 
 */
 
-interface Animal{
-    void Sound() ;
-    void Walks();
-    void Eats();
+interface Animal {
+
+    // constant (public static final automatically)
+    int MAX_AGE = 50;
+
+    // abstract method
+    void eat();
+
+    // default method
+    default void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+
+    // static method
+    static void kingdom() {
+        System.out.println("All animals belong to Animalia kingdom");
+    }
 }
 
-public class Interfaces {
-    
+// Interface inheritance
+interface Pet extends Animal {
+    void play();
+}
+
+// Another interface
+interface Wild {
+    void hunt();
+}
+
+// Class implementing multiple interfaces
+class Dog implements Pet, Wild {
+
+    public void eat() {
+        System.out.println("Dog eats food");
+    }
+
+    public void play() {
+        System.out.println("Dog plays with owner");
+    }
+
+    public void hunt() {
+        System.out.println("Dog hunts small animals");
+    }
+}
+
+public class AnimalInterfaceDemo {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();
+        d.play();
+        d.hunt();
+
+        // default method
+        d.sleep();
+
+        // interface constant
+        System.out.println("Max Age: " + Animal.MAX_AGE);
+
+        // static interface method
+        Animal.kingdom();
+    }
 }
