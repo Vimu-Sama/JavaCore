@@ -1,21 +1,29 @@
-abstract class Animal{
-    int age ;
-    abstract public void Sound() ;
+abstract class A{
+    public void Sound(){
+        System.out.println("Sound");
+    }
+    abstract public void Sleep() ;
 }
 
-class Dog extends Animal{
-    String breed ;
-    public void Sound(){
-        System.out.println("Barks!") ;
+abstract class B extends A{
+    abstract public void Eat() ;
+    public void Function2(){
+        System.out.println("Function 2");
     }
-    public void Barks(){
-        System.out.println("Woof!") ;
-    } 
+}
+
+class C extends B{
+    public void Eat(){
+        System.out.println("C eats food") ;
+    }
+    public void Sleep(){
+        System.out.println("Hello world!") ;
+    }
 }
 
 public class tempCodeRunnerFile{
     public static void main(String[] args){
-        Dog d= new Dog() ;
-        d.Sound();
+        C c= new C() ;
+        c.Sound();
     }
 }
