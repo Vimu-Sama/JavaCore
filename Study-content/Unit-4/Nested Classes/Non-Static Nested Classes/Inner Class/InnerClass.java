@@ -1,7 +1,7 @@
-class Parent{
+class Outer{
     int a ;
     int b ;
-    class Child{
+    class Inner{
         int c ;
         public void AddTotalSum(){
             System.out.println("Add-> " + a + b) ;
@@ -14,14 +14,14 @@ class Parent{
 
 public class InnerClass {
     public static void main(String[] args){
-        Parent p = new Parent() ;
-        Parent.Child c= p.new Child() ;
+        Outer p = new Outer() ;
+        Outer.Inner c= p.new Inner() ;
         c.AddTotalSum() ;
         c.Display() ;
     }
 }
 
-// This is the deep one. The inner class 
+// The inner class 
 // holds an invisible reference to the outer 
 // instance (Parent.this). This is the source 
 // of both its power (access to private state) 

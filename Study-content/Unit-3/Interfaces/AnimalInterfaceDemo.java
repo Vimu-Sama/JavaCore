@@ -46,7 +46,9 @@ INTERFACE RULES IN JAVA
 8. Interface variables MUST be initialized at declaration.
 
    int VALUE = 10;   // allowed
+   
    int VALUE;        // not allowed
+   VALUE= 10;
 
 9. Interfaces CAN contain default methods (since Java 8).
 
@@ -71,7 +73,7 @@ INTERFACE RULES IN JAVA
 
    interface A {}
    interface B {}
-
+    
    class Test implements A, B {}
 
 13. Interfaces CAN extend other interfaces.

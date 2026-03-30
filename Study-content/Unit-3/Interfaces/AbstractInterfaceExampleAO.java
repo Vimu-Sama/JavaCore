@@ -1,7 +1,14 @@
+
+
 interface VehicleBehavior{
+    // int i= 0;
     void start() ;
     void accelerates() ;
     void brakes() ;
+}
+
+interface Trial{
+    void checkOil() ;
 }
 
 abstract class Vehicle{
@@ -15,11 +22,15 @@ abstract class Vehicle{
     }
 }
 
-class Car extends Vehicle implements VehicleBehavior{
+class Car extends Vehicle implements VehicleBehavior, Trial {
     public void start(){
         System.out.println("Turns on ignition key!") ;
     }
     
+    public void checkOil(){
+        System.err.println("");
+    }
+
     public void accelerates(){
         System.out.println("Accelerator pedal pressed!") ;
     }
@@ -28,7 +39,7 @@ class Car extends Vehicle implements VehicleBehavior{
     }
 }
 
-class Bike extends  Vehicle{
+class Bike extends  Vehicle implements Ve{
     public void start(){
         System.out.println("Uses kick or power switch!") ;
     }
