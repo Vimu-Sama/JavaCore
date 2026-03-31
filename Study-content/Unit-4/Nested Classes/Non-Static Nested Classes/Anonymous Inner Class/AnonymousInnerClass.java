@@ -14,7 +14,7 @@ abstract class B{
     }
 }
 
-abstract class C{
+class C{
     public void runs(){
         System.out.println("Object runs") ;
     }
@@ -41,7 +41,7 @@ public class AnonymousInnerClass {
         } ;
         a.walks();
         a.swims();
-
+        
         //with abstract classes
         B b = new B(){
             public void works() {
@@ -54,7 +54,7 @@ public class AnonymousInnerClass {
         //with normal classes
         C c = new C() {
             public void swims(){
-                System.err.println("Swims!");
+                System.out.println("Swims!");
             }
         } ;
         c.swims();

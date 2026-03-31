@@ -1,44 +1,44 @@
 
-
-class PaymentSession{
-    int amount=100 ;
-
-    public PaymentSession(){
+class PaymentSession {
+    public int amount = 100;
+    
+    public PaymentSession() {
         System.out.println("Payment Session started");
     }
 
-    public void VerifyDetails(){
-        System.out.println("Verifies Selected Bank") ;
-        System.out.println("Verifies the PIN entered") ;
-
-        class Success{  //inner nested class
-            public void DisplayStatus(){
-                System.out.println("Status-> Success") ;
-                amount = 100 ;
+    public void VerifyDetails(String s, int pin) {
+        int temp = 10 ;
+        class Success { // local inner nested class
+            public void DisplayStatus() {
+                System.out.println("Status-> Success");
+                amount =200;
                 System.out.println(amount);
+                System.out.println(temp) ;
             }
         }
 
-        Success s = new Success() ;
-        s.DisplayStatus();
-    }
-
-    
-
-    class Failure{      //inner nested class
-        public void DisplayStatus(){
-            System.out.println("Status-> Failed");
+        class Failure { // local inner nested class
+            public void DisplayStatus() {
+                System.out.println("Status-> Failed");
+            }
         }
-    }
-}
 
+        if(s.equals("Madhurya Bank") && pin==123456){
+            Success success= new Success() ;
+            success.DisplayStatus();
+        } else {
+            Failure failure = new Failure() ;
+            failure.DisplayStatus();
+        }
+
+    }
+
+}
 
 public class LiveExampleEQG2 {
     public static void main(String[] args) {
-        System.out.println("Scanned QR code") ;
+        System.out.println("Scanned QR code");
         PaymentSession paymentSession= new PaymentSession() ;
-        paymentSession.VerifyDetails();
-        paymentSession = new PaymentSession() ;
-        // s.DisplayStatus();
+        paymentSession.VerifyDetails("Madhurya", 123456);
     }
 }

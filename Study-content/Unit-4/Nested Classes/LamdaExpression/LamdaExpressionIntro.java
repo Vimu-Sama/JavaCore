@@ -32,7 +32,7 @@ public class LamdaExpressionIntro {
         
         //lambda function with single argument
         String s= "Hello " ;
-        Task3 t3 = argS -> s + "World!" ;
+        Task3 t3 = (p) -> p + "World!" ;
         String p = t3.concatenation(s) ;
         System.out.println("New String is-> " + p);
     }    
