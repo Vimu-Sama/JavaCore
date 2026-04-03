@@ -1,24 +1,25 @@
-class Vehicle{
-    int speed ;
 
-    public void accelerates(){
-        System.out.println("Vehicle accelerates") ;
+class Parent {
+    void Display() {
+        System.out.println("This is a Parent Class");
     }
-    
-    static class Engine{
-        int torque;
+}
 
-        public void works(){
-            System.out.println("Engine runs at" + torque);
-        }
+class Child extends Parent {
+    void Display() {
+        System.out.println("This is a Child Class");
     }
 }
 
 public class LiveExampleHC {
-    public static void main(String[] args) {
-        // Vehicle v= new Vehicle() ;
-        // Vehicle.Engine e = v.new Engine() ;
-                    // new Engine(v reference)
-        Vehicle.Engine e = new Vehicle.Engine() ;
+    public static void main(String[] args){
+        Parent p = new Child() ;
+        Parent p2 = new Parent() {
+            void Display(){
+                System.out.println("This is an Anonymous Class");
+            }
+        };
+        p.Display();
+        p2.Display();
     }
 }

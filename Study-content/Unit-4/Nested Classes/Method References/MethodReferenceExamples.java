@@ -2,6 +2,8 @@ interface funInterface{
     int giveAbsolute(int a) ;
 }
 
+
+
 public class MethodReferenceExamples {
     public static void main(String[] args) {
         funInterface f= b -> Math.abs(b) ;
