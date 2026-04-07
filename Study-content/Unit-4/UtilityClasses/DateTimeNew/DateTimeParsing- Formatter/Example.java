@@ -4,7 +4,7 @@ import java.time.format.*;
 
 public class Example {
     public static void main(String[] args) {
-        //YYYY -> Year
+        //yyyy -> Year
         //MM -> Month
         //dd -> Date
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
