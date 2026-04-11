@@ -1,3 +1,7 @@
+
+
+
+import java.time.DayOfWeek;
 import java.time.LocalDate ;
 import java.time.LocalDateTime;
 import java.time.LocalTime ;
@@ -11,6 +15,17 @@ public class NewDateTimeAPI {
         //for cases when we are only working with date
         LocalDate date= LocalDate.now() ;
         System.out.println("Date-> " + date) ;
+        
+        int dayNum= date.getDayOfMonth() ;
+        int dayYearNum= date.getDayOfYear() ;
+
+        DayOfWeek dw= date.getDayOfWeek() ;
+        int dwInt= date.getDayOfWeek().getValue() ;
+
+        int  year = date.getYear() ;
+
+
+
 
         //LocalTime used for getting time
         //for cases when we are only working with time
