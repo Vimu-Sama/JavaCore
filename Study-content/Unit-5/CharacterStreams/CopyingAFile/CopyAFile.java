@@ -2,7 +2,7 @@
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class AO{
+public class CopyAFile{
     public static void main(String[] args) {
         try{
             FileReader fis= new FileReader("Dummy.txt") ;

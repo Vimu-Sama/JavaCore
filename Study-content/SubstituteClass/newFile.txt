@@ -1,0 +1,1 @@
+This is an example file for Buffered Input and this is -1 value and serves an example that how input and output stream works
