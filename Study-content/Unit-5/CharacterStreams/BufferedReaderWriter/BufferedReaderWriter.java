@@ -1,6 +1,7 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class BufferedReaderWriter {
         public static void main(String[] args){
@@ -14,7 +15,7 @@ public class BufferedReaderWriter {
                 }
                 bufferedReader.close();
                 
-            } catch(Exception e){
+            } catch(IOException e){
                 System.out.println("Exception-> " + e);
             }
             System.out.println("\n============================") ;
