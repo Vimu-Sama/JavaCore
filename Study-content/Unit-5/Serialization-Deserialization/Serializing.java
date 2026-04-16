@@ -27,7 +27,8 @@ class Car implements Serializable{
 public class Serializing{
     public static void main(String[] args) {
         try{
-            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("person.dat")) ;
+            FileOutputStream fos= new FileOutputStream("car.dat") ;
+            ObjectOutputStream outputStream = new ObjectOutputStream(fos) ;
             Car car= new Car(10,30) ;
             Car car1= new Car(20,60) ;
             outputStream.writeObject(car);

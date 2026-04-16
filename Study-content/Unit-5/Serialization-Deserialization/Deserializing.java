@@ -5,7 +5,7 @@ import java.io.ObjectInputStream;
 public class Deserializing {
     public static void main(String[] args) {
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("car.dat"));
             Car car = (Car) ois.readObject();
             System.out.println("Car object--> " + car);
             Car car2 = (Car) ois.readObject();
