@@ -1,9 +1,9 @@
 
-import java.io.BufferedReader;
+import java.io.BufferedReader ;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class BufferedReaderWriter {
+public class BufferedReaderCode {
         public static void main(String[] args){
             
             //Reading file using BufferedReader
@@ -14,7 +14,6 @@ public class BufferedReaderWriter {
                     System.out.print((char)temp) ;
                 }
                 bufferedReader.close();
-                
             } catch(IOException e){
                 System.out.println("Exception-> " + e);
             }
@@ -28,8 +27,14 @@ public class BufferedReaderWriter {
                 String s2 = bufferedReader.readLine() ;
                 System.out.println(s) ;
                 System.out.println(s2) ;
-                bufferedReader.close();
                 
+                //what if we want to read the whole file, line by line
+                String curr= "" ;
+                while((curr = bufferedReader.readLine()) != null){
+                    System.out.println(curr);
+                }
+                bufferedReader.close();
+
             } catch(Exception e){
                 System.out.println("Exception-> " + e);
             }
