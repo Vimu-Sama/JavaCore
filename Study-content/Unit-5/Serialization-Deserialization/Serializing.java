@@ -4,10 +4,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 class Car implements Serializable{
-    public static final long serialVersionUID = 2L ;
+    public static final long serialVersionUID = 4L ;
     int speed= 10 ;
     int mileage = 30 ;
-    String name ;
+    String carName ;
+    String carColor ;
 
     public Car(int speed, int mileage){
         this.speed = speed ;
@@ -31,8 +32,8 @@ public class Serializing{
             ObjectOutputStream outputStream = new ObjectOutputStream(fos) ;
             Car car= new Car(10,30) ;
             Car car1= new Car(20,60) ;
-            outputStream.writeObject(car);
-            outputStream.writeObject(car1);
+            outputStream.writeObject(car) ;
+            outputStream.writeObject(car1) ;
         } catch(Exception e){
             System.out.println("Exception caught-> " + e) ;
         }

@@ -12,6 +12,14 @@ public class Deserializing {
             System.out.println("Car object2--> " + car2);
             System.out.println("Current Class UID: " + Car.serialVersionUID);
             // or you can use while loop, with EOF exception as the way out
+            while(true){
+                try{
+                    car = (Car)ois.readObject() ;
+                } catch(Exception _e){
+                    break ;
+                }
+                
+            }
         } catch (Exception e) {
             System.out.println("Exception caught-> " + e);
         }

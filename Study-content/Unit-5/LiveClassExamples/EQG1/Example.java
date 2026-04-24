@@ -1,41 +1,26 @@
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+
+
+
+class PrintData<T extends Number>{
+    T element1 ;
+    T element2 ;
+
+    public PrintData(T element1, T element2){
+        this.element1 = element1 ;
+        this.element2 = element2 ;
+    }
+
+    public String toString(){
+        return "First Element-> " + element1 + "\nSecond Element-> "+ element2 ;
+    }
+}
 
 public class Example{
     public static void main(String[] args) {
-        try{
-            //replace FileReader with FileInputStream
-            //replace FileWriter with FileOutputStream
-            //replace BufferedReader with BufferedInputStream
-            //replace BufferedWriter with BufferedOutputStream
-            FileInputStream fis= new FileInputStream("newFile.txt") ;
-            BufferedInputStream bufReader = new BufferedInputStream(fis) ;
-
-
-            FileOutputStream fos= new FileOutputStream("newFile2.txt") ;
-            
-            BufferedOutputStream bufferedWriter = new BufferedOutputStream(fos, 1024) ;
-
-
-            int i= 0 ;
-            while( (i= bufReader.read()) != -1){
-                bufferedWriter.write(i);
-            }
-            bufferedWriter.flush();
-
-
-            BufferedInputStream bufReader2 = new BufferedInputStream(new FileInputStream("anotherFile.txt")) ;
-            
-            byte[] b= bufReader2.readAllBytes() ;
-            bufferedWriter.write(b) ;
-            bufferedWriter.close();
-
-        } catch(Exception e){
-            System.out.println("Exception caught->" + e) ;
-        }
-        
+        PrintData<Integer> printDataObject = new PrintData<>(1, 2) ;
+        System.out.println("Print data integer-> " + printDataObject) ;
+        PrintData<Character> printChars = new PrintData<>('a', 'b') ;
+        System.out.println("Print data integer-> " + printChars) ;
     }
 }
