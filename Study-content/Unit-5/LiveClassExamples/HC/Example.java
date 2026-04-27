@@ -1,17 +1,25 @@
-class PrintAllTypes<T extends Character>{
-    T data ;
-    public void Display(){
-        System.out.println("displaying -> "+ data);
-    }
-}
+
+import java.util.* ;
 
 public class Example{
-    public static void main(String[] args) {
-        PrintAllTypes<Integer> printAllIntegerObject= new PrintAllTypes<>() ;
-        printAllIntegerObject.data= 95 ;
-        printAllIntegerObject.Display();
-        PrintAllTypes<Character> printAllTypes = new PrintAllTypes<>() ;
-        printAllTypes.data= 'A' ;
-        printAllTypes.Display();
+
+    public static void PrintList(List<?> list){
+        for(int i=0; i<list.size(); i++){
+            System.out.println(list.get(i)) ;
+        }
+    }
+    public static void main(String[] args){
+        List<String> name = new ArrayList<>();
+        name.add("Saleel") ;
+        name.add("badal") ;
+        name.add("aditya") ;
+        name.add("hamad") ;
+        PrintList(name);
+        List<Integer> age = new ArrayList<>() ;
+        age.add(20) ;
+        age.add(20) ;
+        age.add(21) ;
+        age.add(20) ;
+        PrintList(age);
     }
 }
