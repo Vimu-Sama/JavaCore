@@ -1,32 +1,10 @@
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.util.List ;
 
 public class AO{
     public static void main(String[] args) {
-        try{
-
-            //REPLACE FileWriter WITH FileOutputStream
-            //REPLACE FileReader WITH FileInputStream
-            //REPLACE BufferedWriter WITH BufferedOutputStream
-            //REPLACE BufferedReader WITH BufferedInputStream
-            //import java.io.* ;
-            FileInputStream fis= new FileInputStream("Dummy.txt") ;
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fis) ;
-            
-            FileOutputStream fos= new FileOutputStream("newFile.txt") ;
-            BufferedOutputStream bufferedOutputStream= new BufferedOutputStream(fos) ;
-            int i= 0 ;
-            while( (i = bufferedInputStream.read()) != -1  ){
-                bufferedOutputStream.write((char)i);
-            }
-            String s= "\nThis is the added String!" ;
-            bufferedOutputStream.write(s.getBytes()) ;
-            bufferedOutputStream.flush() ;
-        } catch(Exception e){
-            System.out.println("Exception caught-> " + e);
-        }
+        List<? super Number> list = List.of(20, 10.0f, 7.0) ;
+        Object f= list.get(1) ;
+        Float f2= (Float) f ;
+        list.add(20) ;
     }
 }

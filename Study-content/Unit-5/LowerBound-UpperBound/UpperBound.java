@@ -5,8 +5,8 @@ public class UpperBound {
         
         Object a = new Object() ;
         Object b= new Object() ;
-        List<? extends Object> list = List.of(2.0,1) ;
-        Object  i = list.get(0) ;
+        List<? extends Object> list = List.of(a, b) ;
+        Object i = list.get(0) ;
         Object p = list.get(1) ;
         //no addition will be allowed here
         //send data in one go, not in middle of the code

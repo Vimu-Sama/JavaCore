@@ -1,22 +1,26 @@
-class PrintDetails<T>{
-    T data1 ;
-    T data2 ;
-
-    public PrintDetails(T data1, T data2){
-        this.data1 = data1 ;
-        this.data2 = data2 ;
-    }
-
-    public void DisplayData(){
-        System.out.println("Display-> \n"+ data1 + "\n" + data2) ;
-    }
-}
+import java.util.* ;
 
 public class Example{
+
+    public static void Print(List<?> list){
+        for(int i=0 ;i< list.size(); i++){
+            System.out.println(list.get(i)) ;
+        }
+    }
     public static void main(String[] args) {
-        PrintDetails<Integer> printData = new PrintDetails<>(10,20) ;
-        PrintDetails<String> mohitPradhan = new PrintDetails<>("O+", "O-") ;
-        mohitPradhan.DisplayData() ;
-        printData.DisplayData() ;
+        List<String> name = new ArrayList<>() ;
+        name.add("Mohit") ;
+        name.add("Tanaka") ;
+        name.add("Kartik") ;
+        name.add("Abhiudhay") ;
+        name.add("Ayush") ;
+        name.add("Kadeeja") ;
+        Print(name);
+
+        List<Integer> ageList= new ArrayList<>();
+        ageList.add(20) ;
+        ageList.add(20) ;
+        ageList.add(20) ;
+        Print(ageList);
     }
 }

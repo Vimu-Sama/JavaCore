@@ -54,10 +54,10 @@ public class Example{
         thread1.start();
         thread2.start();
         try{
-            thread1.join();
+            thread1.join() ;
             thread2.join() ;
-        } catch(Exception _e){
-            
+        } catch(Exception e){
+            System.out.println("Exception-> " + e);
         }
         System.out.println("Final value-> " + counter.getCounter());
     }
