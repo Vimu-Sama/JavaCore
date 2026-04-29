@@ -46,6 +46,10 @@ class MyThreadAlt implements Runnable{
     }
 }
 
+//If you want to try the race condition, 
+//then click run button again and again,
+//there will be an output where you will get 6 as output and
+//5 as output sometimes as well
 public class Example{
     public static void main(String[] args) {
         Counter counter= new Counter(2) ;
