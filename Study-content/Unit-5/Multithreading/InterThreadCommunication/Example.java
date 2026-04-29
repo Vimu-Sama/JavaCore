@@ -1,38 +1,44 @@
-class ThreadWorkings implements Runnable{
-    synchronized void FirstFunction(){
-        try{
-            wait() ;
-        } catch(Exception e){
-            System.out.println("Exception-> "  + e);
+class Shared {
+    private boolean ready = false;
+
+    public synchronized void waitForSignal() {
+        while (!ready) {
+            try {
+                System.out.println("Thread 1: Waiting...");
+                wait(); // releases lock and waits
+            } catch (InterruptedException e) {
+                System.out.println("Exception-> "+ e);
+            }
         }
-        System.out.println("Thread woke up!") ;
+        System.out.println("Thread 1: Got signal, continuing...");
     }
 
-    synchronized void WakeAnyThread(){
-        notify();
-        System.out.println("Thread notified to wake up!") ;
-    }
-
-    synchronized void WakeAllThreads(){
-        notifyAll();
-    }
-
-    public void run(){
-       System.out.println("Thread Workings started running"); 
-       FirstFunction();
+    public synchronized void sendSignal() {
+        System.out.println("Thread 2: Doing some work...");
+        ready = true;
+        notify(); // wakes one waiting thread
+        System.out.println("Thread 2: Sent signal");
     }
 }
 
-
 public class Example {
     public static void main(String[] args) {
-        System.out.println("Thread execution started") ;
-        Thread thread= new Thread(new ThreadWorkings()) ;
-        try{
-            thread.start();
-        } catch(Exception e){
-            System.out.println("Exception caught-> " + e) ;
-        }
-        System.out.println("Thread execution completed") ;
-    }    
+
+        Shared obj = new Shared();
+
+        Thread t1 = new Thread(() -> {
+            obj.waitForSignal();
+        });
+
+        Thread t2 = new Thread(() -> {
+            try {
+                Thread.sleep(2000); // simulate delay
+            } catch (InterruptedException e) {}
+
+            obj.sendSignal();
+        });
+
+        t1.start();
+        t2.start();
+    }
 }

@@ -1,3 +1,6 @@
+
+
+
 class Counter{
     private int counter ;
     public Counter(int counter){
@@ -57,12 +60,12 @@ public class Example{
         Thread thread2 = new Thread(new MyThreadAlt(counter)) ;
         thread1.start();
         thread2.start();
-        try{
-            thread1.join() ;
-            thread2.join() ;
-        } catch(Exception e){
-            System.out.println("Exception-> " + e);
-        }
+        // try{
+        //     thread1.join() ;
+        //     thread2.join() ;
+        // } catch(Exception e){
+        //     System.out.println("Exception-> " + e);
+        // }
         System.out.println("Final value-> " + counter.getCounter());
     }
 }

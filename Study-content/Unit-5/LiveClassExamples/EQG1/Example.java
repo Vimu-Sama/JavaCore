@@ -1,4 +1,8 @@
-class MyThread extends Thread{
+
+
+
+
+class MyThread implements Runnable{
 
     @Override
     public void run() {
@@ -8,8 +12,11 @@ class MyThread extends Thread{
 
 public class Example {
         public static void main(String[] args) {
-            MyThread thread= new MyThread() ;
-            thread.run() ;
-            // thread.start() ;
+            Thread thread= new Thread(()->{
+                System.out.println("System started running...") ;
+            });
+            thread.start() ;
+
+            Thread thread2= new Thread(new MyThread()) ;
         }
 }
