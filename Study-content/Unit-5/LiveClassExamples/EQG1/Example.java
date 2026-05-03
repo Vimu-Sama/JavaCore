@@ -1,22 +1,45 @@
 
+class Sweets{
+    int counter;
 
+    public Sweets(int counter){
+        this.counter = counter ;
+    }
 
+}
+class PersonEating implements Runnable{
 
-class MyThread implements Runnable{
+    Sweets sweets ;
+    String name;
+
+    public PersonEating(Sweets sweets, String name){
+        this.sweets = sweets ;
+        this.name = name ;
+    }
+
+    public synchronized void eatSweet(){
+        sweets.counter--;
+    }
 
     @Override
     public void run() {
-        System.out.println("My thread has started running!");
+        Thread.currentThread().setName(name);
+        System.out.println(Thread.currentThread().getName() + " " + "started executing!");
+        Thread example= new Thread(()-> {
+            System.out.println("This is new thread created! Name->  " + Thread.currentThread().getName() ) ;
+        }) ;
+        example.start();
     }
 }
 
 public class Example {
         public static void main(String[] args) {
-            Thread thread= new Thread(()->{
-                System.out.println("System started running...") ;
-            });
-            thread.start() ;
-
-            Thread thread2= new Thread(new MyThread()) ;
+            Sweets diwaliSweets= new Sweets(5) ;
+            Thread manashwi = new Thread(new PersonEating(diwaliSweets, "manashwi")) ;
+            Thread dhruv = new Thread(new PersonEating(diwaliSweets, "dhruv")) ;
+            Thread bryn = new Thread(new PersonEating(diwaliSweets, "bryn")) ;
+            manashwi.start();
+            dhruv.start();
+            bryn.start();
         }
 }

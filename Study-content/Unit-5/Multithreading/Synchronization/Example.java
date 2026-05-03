@@ -44,6 +44,8 @@ public class Example {
         System.out.println("Counter before thread starting-> " + sharedCounter.counter);
 
         try {
+            //join function stops the execution of current thread and
+            //waits for the mentioned thread to complete the execution
             thread1.join();
             thread2.join();
             thread3.join();
