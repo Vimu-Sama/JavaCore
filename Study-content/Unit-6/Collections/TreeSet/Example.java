@@ -18,17 +18,17 @@ public class Example {
         treeSet.add(-10) ;
         System.out.println("\n==================\n") ;
         System.out.println("Set-> "+ treeSet) ;
-        System.out.println("\n==================\n") ;
+        System.out.println("==================\n") ;
         
         treeSet.removeLast();
         System.out.println("Set-> "+ treeSet) ;
-        System.out.println("\n==================\n") ;
+        System.out.println("==================\n") ;
         
         for(int itr: treeSet){
             System.out.println("TreeSet-> "+ itr);
         }
         treeSet.removeFirst() ;
-        System.out.println("\n==================\n") ;
+        System.out.println("==================\n") ;
         System.out.println("Set-> "+ treeSet + "\n\n") ;
     }
 }
