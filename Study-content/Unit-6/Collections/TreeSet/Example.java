@@ -7,8 +7,15 @@ import java.util.TreeSet;
 //Implements Red-Black Tree
 //Sorts the elements as they are entered
 //Time Complexity of Insertion-> O(log n)
-//Important Functions
+
+//Important Functions-> 
 // add()
+// removeFirst()
+// reversed()
+// removeLast()
+// addFirst()
+// addLast()
+
 public class Example {
     public static void main(String[] args) {
         TreeSet<Integer> treeSet = new TreeSet<>(Comparator.reverseOrder()) ;
@@ -19,7 +26,6 @@ public class Example {
         System.out.println("\n==================\n") ;
         System.out.println("Set-> "+ treeSet) ;
         System.out.println("==================\n") ;
-        
         treeSet.removeLast();
         System.out.println("Set-> "+ treeSet) ;
         System.out.println("==================\n") ;
