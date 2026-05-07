@@ -1,6 +1,18 @@
 
 import java.util.HashMap;
 
+//Important Functions-> 
+    //put()
+    //clear()
+    //getValue()
+    //isEmpty()
+    //size()
+
+//Traversal->
+    //values()
+    //keySet()
+    //entrySet()
+
 public class Example {
     public static void main(String[] args) {
         HashMap<Integer, String> hashMap = new HashMap<>() ;

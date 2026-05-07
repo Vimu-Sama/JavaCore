@@ -1,5 +1,4 @@
 
-import java.util.Comparator;
 import java.util.TreeSet;
 
 
@@ -10,19 +9,19 @@ import java.util.TreeSet;
 
 //Important Functions-> 
 // add()
+// remove() ;
 // removeFirst()
-// reversed()
 // removeLast()
 // addFirst()
 // addLast()
 
 public class Example {
     public static void main(String[] args) {
-        TreeSet<Integer> treeSet = new TreeSet<>(Comparator.reverseOrder()) ;
-        treeSet.add(10) ;
-        treeSet.add(-5) ;
-        treeSet.add(12) ;
-        treeSet.add(-10) ;
+        TreeSet<Integer> treeSet = new TreeSet<>() ;
+        treeSet.add(10) ;     //10
+        treeSet.add(-5) ;       // -5 10
+        treeSet.add(12) ;    // -5 10 12
+        treeSet.add(-10) ;     // -10 -5 10 12
         System.out.println("\n==================\n") ;
         System.out.println("Set-> "+ treeSet) ;
         System.out.println("==================\n") ;
@@ -36,5 +35,7 @@ public class Example {
         treeSet.removeFirst() ;
         System.out.println("==================\n") ;
         System.out.println("Set-> "+ treeSet + "\n\n") ;
+
+        
     }
 }

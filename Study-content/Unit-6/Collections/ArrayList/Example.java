@@ -6,6 +6,7 @@ import java.util.ArrayList;
 //Important Functions to remember-> 
 // add()
 // get()
+// set()
 // remove()
 public class Example {
     public static void main(String[] args) {
@@ -23,6 +24,11 @@ public class Example {
         }
         ar.remove(2);
         System.out.println("\nArray element printed via for each loop ~-> ") ;
+        for(int i: ar){
+            System.out.println(i) ;
+        }
+        System.out.println("\nArray element printed via for each loop ~-> ") ;
+        ar.set(2, 200) ;
         for(int i: ar){
             System.out.println(i) ;
         }
