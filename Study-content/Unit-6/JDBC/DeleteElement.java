@@ -1,0 +1,22 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class DeleteElement {
+    public static void main(String[] args) {
+        String url= "jdbc:postgresql://localhost:5432/postgres" ;
+        String user= "postgres" ;
+        String password = "postgres" ;
+        String delSql = "DELETE FROM customer WHERE id= ?" ;
+        try{
+            Connection conn = DriverManager.getConnection(url, user, password) ;
+            PreparedStatement pstmt = conn.prepareStatement(delSql) ;
+            pstmt.setInt(1, 1);
+            int i= pstmt.executeUpdate() ;
+            System.out.println("Records modified-> " + i) ;
+        } catch(Exception e){
+            System.out.println("Exception-> "+ e) ;
+        }
+    }
+}

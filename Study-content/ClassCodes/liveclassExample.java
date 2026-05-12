@@ -1,35 +1,24 @@
-abstract class Vehicle{
-    int speed ;
-    int fuelCapacity ;
+import java.util.* ;
 
-    abstract void EngineStarts() ;  //abstract method
+class Employee implements Comparable<Employee>{
+    int empId ;
+    String name ;
 
-    public void EngineStops(){
-        System.out.println("Engine has stopped") ;
+    public int compareTo(Employee e){
+        return this.empId - e.empId ;
+    }
+
+    public Employee(int empId, String name){
+        this.empId = empId ;
+        this.name = name ;
     }
 }
 
-abstract class VehicleColor extends Vehicle{
-    
-}
-
-class Car extends VehicleColor{
-    public void EngineStarts(){
-        System.out.println("Turn on ignition key") ;
-    }
-}
-
-class Bike extends Vehicle{
-    public void EngineStarts(){
-        System.out.println("Used power switch or kick") ;
-    }
-}
-
-public class liveclassExample {
-    public static void main(String[] args) {
-        Vehicle v= new Car() ;
-        v.EngineStarts();
-        Vehicle v2= new Bike() ;
-        v2.EngineStarts();
+public class liveclassExample{
+    public static void main(String[] args){
+        List<Employee> empList = new ArrayList<>() ;
+        empList.add(new Employee(0, "A")) ;
+        empList.add(new Employee(1, "B")) ;
+        empList.add(new Employee(2, "A")) ;
     }
 }

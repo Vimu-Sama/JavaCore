@@ -8,8 +8,9 @@ import java.util.TreeSet;
 //Time Complexity of Insertion-> O(log n)
 
 //Important Functions-> 
-// add()
-// remove() ;
+// add(Object o)
+// size()
+// remove(Object o) ;
 // removeFirst()
 // removeLast()
 // addFirst()
@@ -22,13 +23,14 @@ public class Example {
         treeSet.add(-5) ;       // -5 10
         treeSet.add(12) ;    // -5 10 12
         treeSet.add(-10) ;     // -10 -5 10 12
+        treeSet.add(-5) ;       // -10 -5 10 12
         System.out.println("\n==================\n") ;
         System.out.println("Set-> "+ treeSet) ;
         System.out.println("==================\n") ;
         treeSet.removeLast();
         System.out.println("Set-> "+ treeSet) ;
         System.out.println("==================\n") ;
-        
+        treeSet.remove(-5) ;
         for(int itr: treeSet){
             System.out.println("TreeSet-> "+ itr);
         }
