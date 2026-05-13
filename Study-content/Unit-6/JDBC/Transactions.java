@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public class Transactions {
     public static void main(String[] args){
+        //javac -cp ".;postgresql-42.7.10.jar" Transactions.java
+        //java -cp ".;postgresql-42.7.10.jar" Transactions
+        
         String url= "jdbc:postgresql://localhost:5432/postgres" ;
         String user = "postgres" ;
         String password= "postgres" ;

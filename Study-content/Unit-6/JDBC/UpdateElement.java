@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 
 public class UpdateElement {
     public static void main(String[] args){
+        //Commands to run this code via Terminal->
+        //javac -cp ".;postgresql-42.7.10.jar" UpdateElement.java
+        //java -cp ".;postgresql-42.7.10.jar" UpdateElement
         String url = "jdbc:postgresql://localhost:5432/postgres" ;
         String name= "postgres" ;
         String password = "postgres" ;
