@@ -12,13 +12,14 @@ public class WriteElement {
         String url = "jdbc:postgresql://localhost:5432/postgres" ;
         String user = "postgres" ;
         String password = "postgres" ;
-        String createUser = "INSERT INTO customer(id, name) VALUES (?, ?)" ;
+        String createUser = "INSERT INTO student(id, name, marks) VALUES (?, ?, ?)" ;
 
         try{
             Connection conn = DriverManager.getConnection(url, user, password) ;
             PreparedStatement pstmt = conn.prepareStatement(createUser) ;
-            pstmt.setInt(1, 3) ;
-            pstmt.setString(2, "Mukesh") ;
+            pstmt.setInt(1, 4) ;
+            pstmt.setString(2, "Kajal") ;
+            pstmt.setInt(3, 30) ;
             int rowInserted = pstmt.executeUpdate() ;
             System.out.println("Row Inserted-> " + rowInserted) ;
             conn.close() ;

@@ -12,7 +12,7 @@ public class DeleteElement {
         String url= "jdbc:postgresql://localhost:5432/postgres" ;
         String user= "postgres" ;
         String password = "postgres" ;
-        String delSql = "DELETE FROM customer WHERE id= ?" ;
+        String delSql = "DELETE FROM student WHERE id= ?" ;
         try{
             Connection conn = DriverManager.getConnection(url, user, password) ;
             PreparedStatement pstmt = conn.prepareStatement(delSql) ;

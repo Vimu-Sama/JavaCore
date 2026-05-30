@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,14 +14,18 @@ public class ReadElement {
         String user= "postgres" ;
         String password= "postgres" ;
         try{
-            Connection con = DriverManager.getConnection(url, user, password) ;
-            Statement readStatement = con.createStatement() ;
+            Connection con = DriverManager.getConnection(url, user, password) ;  //create a connection
             String readSQL= "SELECT * FROM student" ;
-            ResultSet rst= readStatement.executeQuery(readSQL) ;
+            Statement readStatement = con.createStatement() ; //create statement
+            PreparedStatement prepStatement  = con.prepareStatement(readSQL) ;
+            ResultSet rst= readStatement.executeQuery(readSQL) ; //execute query 
+            ResultSet rst2 = prepStatement.executeQuery() ;
+            
             while(rst.next()){
-                System.out.println("Index-> " + rst.getInt(1) + " Name-> " + rst.getString(2)) ;
+                System.out.println("Index-> " + rst.getInt(1) + " Name-> " + rst.getString(2) + 
+              " Student Marks-> " + rst.getInt(3)) ;
             }
-            con.close();
+            con.close(); //close connection
         } catch(SQLException e){
             System.out.println("Exception caught-> "  + e) ;
         }

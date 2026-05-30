@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class Transactions {
     public static void main(String[] args){
+        //Commands to run this code via Terminal-> 
         //javac -cp ".;postgresql-42.7.10.jar" Transactions.java
         //java -cp ".;postgresql-42.7.10.jar" Transactions
         

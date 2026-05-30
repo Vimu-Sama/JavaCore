@@ -11,12 +11,12 @@ public class UpdateElement {
         String url = "jdbc:postgresql://localhost:5432/postgres" ;
         String name= "postgres" ;
         String password = "postgres" ;
-        String updateSQL = "UPDATE customer SET name = ? WHERE id= ?" ;
+        String updateSQL = "UPDATE student SET id = ? WHERE name= ?" ;
         try{
             Connection conn= DriverManager.getConnection(url, name, password) ;
             PreparedStatement preparedStatement = conn.prepareStatement(updateSQL) ;
-            preparedStatement.setString(1, "Muuku");
-            preparedStatement.setInt(2, 3) ;
+            preparedStatement.setInt(1, 2);
+            preparedStatement.setString(2, "Satvik") ;
             int i = preparedStatement.executeUpdate() ;
             System.out.println("Rows modified-> "+ i) ;
         } catch(Exception e){
